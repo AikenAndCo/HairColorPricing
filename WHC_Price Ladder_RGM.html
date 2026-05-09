@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Women's Hair Color — Competitive Price Landscape</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --r-primary: #0F0F12;     /* black header */
+  --r-secondary: #C8102E;   /* red title bar */
+  --r-accent: #C8102E;      /* red accent (kept var name for compatibility with hdr-tag em) */
+  --bg: #F4F6F9;
+  --navy: #1A2744;
+  --muted: #6B6560;
+  --warm-dark: #D0CAC0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  font-family: 'DM Sans', sans-serif;
+  color: #1A1A1A;
+  font-size: 14px;
+}
+.wrap {
+  min-width: 1440px;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: var(--bg);
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--r-primary);
+  padding: 0 24px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s ease;
+}
+.header-left { display: flex; align-items: center; gap: 18px; position: relative; }
+.r-logo {
+  width: 38px; height: 38px;
+  background: var(--r-accent);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s ease;
+}
+.r-logo svg { width: 22px; height: 22px; }
+.r-logo .r-letter {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--r-primary);
+  line-height: 1;
+}
+.r-wordmark-wrap {
+  display: flex; align-items: center; gap: 8px;
+  cursor: pointer;
+  padding: 6px 10px 6px 0;
+  border-radius: 4px;
+  user-select: none;
+  transition: background 0.15s;
+}
+.r-wordmark-wrap:hover { background: rgba(255,255,255,0.08); }
+.r-wordmark {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.r-chevron {
+  width: 11px; height: 11px;
+  fill: rgba(255,255,255,0.55);
+  transition: transform 0.15s;
+}
+.r-wordmark-wrap.open .r-chevron { transform: rotate(180deg); }
+.r-dropdown {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.1);
+  padding: 6px;
+  min-width: 200px;
+  z-index: 1000;
+  display: none;
+}
+.r-dropdown.open { display: block; }
+.r-option {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1A2744;
+  transition: background 0.1s;
+}
+.r-option:hover { background: #F4F6F9; }
+.r-option.active { background: #F4F6F9; }
+.r-option-swatch {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.r-option-swatch .r-letter { font-size: 9px; font-weight: 700; line-height: 1; }
+.r-option-name { flex: 1; }
+.r-option.active::after {
+  content: '✓';
+  color: #1A2744;
+  opacity: 0.6;
+  font-size: 13px;
+}
+.hdr-rule { width: 1px; height: 26px; background: rgba(255,255,255,0.2); }
+.hdr-sub {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+.hdr-right { display: flex; align-items: center; gap: 16px; }
+.hdr-tag {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+.hdr-tag em { color: var(--r-accent); font-style: normal; }
+.hdr-byline {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.55);
+}
+.hdr-byline em {
+  color: #fff;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* ── TITLE ── */
+.title-bar {
+  background: var(--r-secondary);
+  padding: 13px 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  transition: background 0.3s ease;
+}
+.title-bar h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 400;
+  color: #fff; letter-spacing: 0.02em;
+}
+.title-bar-rt {
+  margin-left: auto;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ── CONTENT ── */
+.content { padding: 16px 16px 0; }
+
+/* ── BOXES ── */
+.brand-box {
+  position: absolute;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.13s ease, box-shadow 0.13s ease,
+              top 0.42s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.brand-box:hover {
+  transform: translateY(-3px) scale(1.06);
+  z-index: 200 !important;
+}
+
+/* ── EDIT INPUT ── */
+.price-input-inline {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  text-align: center;
+  background: rgba(0,0,0,0.05);
+  border: none;
+  border-bottom: 1.5px solid rgba(26,39,68,0.35);
+  outline: none;
+  width: 88%;
+  display: block;
+  margin: 2px auto;
+  line-height: 1;
+  padding: 0;
+  color: var(--navy);
+  border-radius: 0;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: #1F242E;
+  height: 8px;
+  margin-top: 16px;
+}
+.footer-l { display: flex; align-items: center; gap: 10px; }
+.fdot { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.2); }
+
+/* ── TIER EDIT POPOVER ── */
+.tier-band-clickable {
+  cursor: pointer;
+  pointer-events: auto !important;
+}
+.tier-band-clickable:hover {
+  filter: brightness(0.96);
+}
+.tier-popover {
+  position: absolute;
+  z-index: 2000;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.22), 0 2px 10px rgba(0,0,0,0.1);
+  padding: 14px 16px 12px;
+  width: 240px;
+}
+.tier-popover-title {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #C8102E;
+  margin-bottom: 10px;
+}
+.tier-popover-row {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 8px;
+}
+.tier-popover-row label {
+  flex: 0 0 50px;
+  font-size: 10px;
+  font-weight: 500;
+  color: #6B6560;
+}
+.tier-popover-row input {
+  flex: 1;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: #1A2744;
+  background: rgba(0,0,0,0.03);
+  border: 1px solid rgba(26,39,68,0.12);
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+}
+.tier-popover-row input:focus {
+  border-color: #C8102E;
+  background: rgba(200,16,46,0.04);
+}
+.tier-popover-buttons {
+  display: flex; justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(26,39,68,0.08);
+}
+.tier-popover-buttons button {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 6px 12px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
+.tier-popover-buttons .tp-save {
+  background: #1A2744;
+  color: #fff;
+}
+.tier-popover-buttons .tp-save:hover { background: #2D3D5E; }
+.tier-popover-buttons .tp-delete {
+  background: transparent;
+  color: #C8102E;
+}
+.tier-popover-buttons .tp-delete:hover { background: rgba(200,16,46,0.08); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <div class="r-wordmark" style="font-family:'DM Sans',sans-serif;font-size:21px;font-weight:700;color:#fff;letter-spacing:0.06em;">RGM</div>
+    <div class="hdr-rule"></div>
+    <div class="hdr-sub">Hair Color · Price Analysis</div>
+  </div>
+  <div class="hdr-right">
+    <div class="hdr-byline">Revenue Growth Management</div>
+  </div>
+</div>
+
+<!-- TITLE -->
+<div class="title-bar">
+  <h1>Women's Hair Color — Competitive Price Landscape</h1>
+  <div class="title-bar-rt">Click any price or tier to edit · Positions update live</div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+  <div style="display:flex;">
+    <div id="axis"></div>
+    <div id="zone"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer"></div>
+
+</div>
+
+<script>
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// DATA
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const PERM = [
+  { key:'colorsilk', name:'ColorSilk',    org:'Revlon',       price:4.97, oz:4.0, isRevlon:true,
+    bg:'linear-gradient(158deg,#C8102E 0%,#7D0A1B 100%)',
+    ig:'radial-gradient(ellipse 65% 72% at 50% 32%,rgba(255,210,210,0.38) 0%,transparent 66%)',
+    pc:'#C8102E', sh:'0 10px 32px rgba(200,16,46,0.46),0 3px 10px rgba(0,0,0,0.2)' },
+  { key:'niceeasy',  name:"Nice 'n Easy", org:'Clairol',      price:7.98,
+    bg:'linear-gradient(158deg,#1A4F8E 0%,#0C2D56 100%)',
+    ig:'radial-gradient(ellipse 65% 72% at 50% 32%,rgba(155,215,255,0.24) 0%,transparent 66%)',
+    pc:'#1A2744', sh:'0 4px 16px rgba(0,0,0,0.22)' },
+  { key:'nutrisse',  name:'Nutrisse',     org:'Garnier',      price:8.97,
+    bg:'linear-gradient(158deg,#2E7D32 0%,#1A5220 100%)',
+    ig:'radial-gradient(ellipse 65% 72% at 50% 32%,rgba(155,255,155,0.2) 0%,transparent 66%)',
+    pc:'#1A2744', sh:'0 4px 16px rgba(0,0,0,0.22)' },
+  { key:'olia',      name:'Olia',         org:'Garnier',      price:9.97,
+    bg:'linear-gradient(158deg,#4A7A20 0%,#264410 100%)',
+    ig:'radial-gradient(ellipse 65% 72% at 50% 32%,rgba(190,255,155,0.2) 0%,transparent 66%)',
+    pc:'#1A2744', sh:'0 4px 16px rgba(0,0,0,0.22)' },
+  { key:'keratin',   name:'Keratin Color',org:'Schwarzkopf',  price:11.97,
+    bg:'linear-gradient(158deg,#1C1C2C 0%,#2D2D42 100%)',
+    ig:'radial-gradient(ellipse 65% 72% at 50% 32%,rgba(195,188,255,0.16) 0%,transparent 66%)',
+    pc:'#1A2744', sh:'0 4px 16px rgba(0,0,0,0.22)' },
+  { key:'excellence',name:'Excellence',   org:"L'Oréal",      price:11.97, oz:5.0,
+    bg:'linear-gradient(158deg,#8B6914 0%,#5C4008 100%)',
+    ig:'radial-gradient(ellipse 65% 72% at 50% 32%,rgba(255,228,138,0.26) 0%,transparent 66%)',
+    pc:'#1A2744', sh:'0 4px 16px rgba(0,0,0,0.22)' },
+  { key:'feria',     name:'Féria',        org:"L'Oréal",      price:12.97,
+    bg:'linear-gradient(158deg,#5A1880 0%,#2A0845 100%)',
+    ig:'radial-gradient(ellipse 65% 72% at 50% 32%,rgba(228,158,255,0.26) 0%,transparent 66%)',
+    pc:'#1A2744', sh:'0 4px 16px rgba(0,0,0,0.22)' },
+  { key:'pref',      name:'Préférence',   org:"L'Oréal",      price:12.97,
+    bg:'linear-gradient(158deg,#5C3A6E 0%,#2E1D38 100%)',
+    ig:'radial-gradient(ellipse 65% 72% at 50% 32%,rgba(220,200,240,0.22) 0%,transparent 66%)',
+    pc:'#1A2744', sh:'0 4px 16px rgba(0,0,0,0.22)' },
+];
+
+const CARE = [
+  { key:'cs-care',  name:'ColorSilk',  org:'Revlon',    price:8.47, oz:7.1, isRevlon:true,
+    bg:'linear-gradient(158deg,#C8102E 0%,#7D0A1B 100%)', bc:'#C8102E', pc:'#C8102E' },
+  { key:'feria-care', name:'Féria', org:"L'Oréal",   price:8.97, oz:4.0,
+    bg:'linear-gradient(158deg,#5A1880 0%,#2A0845 100%)', bc:'#5A1880', pc:'#1A2744' },
+  { key:'excellence-care', name:'Excellence', org:"L'Oréal", price:8.97, oz:4.0,
+    bg:'linear-gradient(158deg,#8B6914 0%,#5C4008 100%)', bc:'#8B6914', pc:'#1A2744' },
+  { key:'pref-care', name:'Préférence', org:"L'Oréal", price:8.97, oz:4.0,
+    bg:'linear-gradient(158deg,#5C3A6E 0%,#2E1D38 100%)', bc:'#5C3A6E', pc:'#1A2744' },
+];
+
+const TOUCHUP = [
+  { key:'cs-t',  name:'Express Retouch', org:'Garnier',  price:3.97,
+    bg:'linear-gradient(158deg,#2E7D32 0%,#1A5220 100%)', bc:'#2E7D32', pc:'#1A2744' },
+  { key:'lr-t',  name:'Magic Root',      org:"L'Oréal",  price:6.97,
+    bg:'linear-gradient(158deg,#8B6914 0%,#5C4008 100%)', bc:'#8B6914', pc:'#1A2744' },
+  { key:'cl-t',  name:'Root Touch-Up',   org:'Clairol',  price:7.98,
+    bg:'linear-gradient(158deg,#1A4F8E 0%,#0C2D56 100%)', bc:'#1A4F8E', pc:'#1A2744' },
+];
+
+const DEMI = [
+  { key:'cs-d',  name:'Tone + Gloss',      org:'Revlon',    price:5.98, isRevlon:true,
+    bg:'linear-gradient(158deg,#C8102E 0%,#7D0A1B 100%)', bc:'#C8102E', pc:'#C8102E' },
+  { key:'lo-d',  name:'Le Color Gloss',    org:"L'Oréal",   price:9.99,
+    bg:'linear-gradient(158deg,#8B6914 0%,#5C4008 100%)', bc:'#8B6914', pc:'#1A2744' },
+  { key:'ni-d',  name:'Natural Instincts', org:'Clairol',   price:7.96,
+    bg:'linear-gradient(158deg,#1A4F8E 0%,#0C2D56 100%)', bc:'#1A4F8E', pc:'#1A2744' },
+];
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// SCALE
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const MIN_P = 0, STAGE_H = 680;
+let MAX_P = 16;                              // dynamic — recomputed when prices change
+let PPD = STAGE_H / (MAX_P - MIN_P);         // dynamic
+function p2y(p) { return (MAX_P - p) * PPD; }
+
+// Box dims — sized to fit the wider $0-$16 range without overpowering the y-axis
+const BW = 68,  BH = 108;   // standard perm
+const RW = 76,  RH = 120;   // Revlon hero
+const CBW = 66, CBH = 102;  // touch/demi
+const CARE_BW = 56;          // care boxes — narrower since 4 fit in CARE column
+
+// Layout — column widths sized for box width plus ~6-8px breathing room
+const PERM_W  = 608;  // 8 × 76
+const CARE_W  = 252;  // 4 × 63
+const TOUCH_W = 216;  // 3 × 72
+const DEMI_W  = 216;  // 3 × 72
+const SEP     = 16;
+
+const CARE_X  = PERM_W + SEP;
+const TOUCH_X = CARE_X + CARE_W + SEP;
+const DEMI_X  = TOUCH_X + TOUCH_W + SEP;
+const ZONE_W  = PERM_W + SEP + CARE_W + SEP + TOUCH_W + SEP + DEMI_W;
+
+const PERM_SLOT  = PERM_W  / PERM.length;
+const CARE_SLOT  = CARE_W  / CARE.length;
+const TOUCH_SLOT = TOUCH_W / TOUCHUP.length;
+const DEMI_SLOT  = DEMI_W  / DEMI.length;
+
+const BRACKET_X = PERM_W + Math.round(SEP / 2);
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// TIER BANDS
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+let TIERS = [
+  { lo:3.00, hi:4.50,  bg:'rgba(245,247,250,0.0)',  label:null },
+  { lo:4.50, hi:6.50,  bg:'rgba(232,234,238,0.6)',  label:'VALUE',    lc:'rgba(60,65,75,0.6)' },
+  { lo:6.50, hi:7.50,  bg:'rgba(222,224,228,0.4)',  label:null },
+  { lo:7.50, hi:9.99,  bg:'rgba(212,214,220,0.6)',  label:'MASSTIGE', lc:'rgba(60,65,75,0.6)' },
+  { lo:10.0, hi:11.49, bg:'rgba(196,200,208,0.6)',  label:'PREMIUM',  lc:'rgba(60,65,75,0.6)' },
+  { lo:11.5, hi:14.0,  bg:'rgba(178,184,194,0.65)', label:'PRESTIGE', lc:'rgba(60,65,75,0.65)' },
+];
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// AXIS
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function buildAxis() {
+  const el = document.getElementById('axis');
+  el.style.cssText = `width:62px;height:${STAGE_H}px;flex-shrink:0;position:relative;`;
+  el.appendChild(mk('div',`position:absolute;top:0;bottom:0;right:10px;width:1.5px;background:#1A2744;opacity:0.7;`));
+  const tickStep = MAX_P > 20 ? 1 : 0.5;
+  for (let p = Math.ceil(MIN_P); p <= Math.floor(MAX_P); p += tickStep) {
+    const isW = Number.isInteger(p), isE = isW && p % 2 === 0;
+    const row = mk('div',`position:absolute;right:10px;top:${p2y(p)}px;transform:translateY(-50%);`);
+    row.appendChild(mk('div',`width:${isW?12:5}px;height:1.5px;background:#1A2744;opacity:${isW?0.7:0.2};`));
+    if (isW) {
+      const lbl = mk('span',`position:absolute;right:18px;top:50%;transform:translateY(-50%);
+        font-family:'Cormorant Garamond',serif;
+        font-size:${isE?'19px':'15px'};font-weight:${isE?'500':'300'};
+        color:#1A2744;opacity:${isE?0.9:0.5};white-space:nowrap;`);
+      lbl.textContent = '$' + p;
+      row.appendChild(lbl);
+    }
+    el.appendChild(row);
+  }
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// ZONE
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function buildZone() {
+  const z = document.getElementById('zone');
+  z.style.cssText = `position:relative;width:${ZONE_W}px;height:${STAGE_H}px;flex-shrink:0;overflow:visible;background:#fff;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,0.08);`;
+
+  // Tier band container (re-renderable)
+  const tierLayer = mk('div', 'position:absolute;inset:0;pointer-events:none;');
+  tierLayer.id = 'tierLayer';
+  z.appendChild(tierLayer);
+  renderTierBands();
+
+  // Grid lines
+  for (let p = Math.ceil(MIN_P); p <= Math.floor(MAX_P); p += 0.5)
+    z.appendChild(mk('div',`position:absolute;left:0;right:0;top:${p2y(p)}px;height:1px;background:rgba(60,65,75,${p%1===0?0.08:0.03});pointer-events:none;`));
+
+  // Column dividers + headers
+  [
+    { label:'Permanent Color',  x:0,       w:PERM_W  },
+    { label:'After Color Care', x:CARE_X,  w:CARE_W  },
+    { label:'Root Touch-Up',    x:TOUCH_X, w:TOUCH_W },
+    { label:'Demi-Permanent',   x:DEMI_X,  w:DEMI_W  },
+  ].forEach((c, i) => {
+    // Dividers
+    if (i > 0) {
+      z.appendChild(mk('div',`position:absolute;top:0;bottom:0;left:${c.x - SEP}px;width:${SEP}px;background:rgba(245,247,250,0.6);pointer-events:none;`));
+      z.appendChild(mk('div',`position:absolute;top:0;bottom:0;left:${c.x - Math.round(SEP/2)}px;border-left:1px dashed rgba(60,65,75,0.18);pointer-events:none;`));
+    }
+
+    // Column header
+    const hdr = mk('div',`position:absolute;top:9px;left:${c.x}px;width:${c.w}px;text-align:center;pointer-events:none;`);
+    hdr.innerHTML = `<span style="font-size:12.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(60,65,75,0.6);">${c.label}</span>`;
+    z.appendChild(hdr);
+  });
+}
+
+function renderTierBands() {
+  const layer = document.getElementById('tierLayer');
+  if (!layer) return;
+  layer.innerHTML = '';
+  TIERS.forEach((t, idx) => {
+    const tp = p2y(t.hi), h = (t.hi - t.lo) * PPD;
+    const band = mk('div',`position:absolute;left:0;right:0;top:${tp}px;height:${h}px;background:${t.bg};`);
+    if (t.label) {
+      band.classList.add('tier-band-clickable');
+      band.title = 'Click to edit tier';
+      band.addEventListener('click', (e) => { e.stopPropagation(); editTier(idx, e); });
+    }
+    layer.appendChild(band);
+    if (t.label) {
+      const lb = mk('div',`position:absolute;left:10px;top:${tp + 6}px;font-size:11px;font-weight:700;letter-spacing:0.18em;color:${t.lc};pointer-events:none;`);
+      lb.textContent = t.label;
+      layer.appendChild(lb);
+    }
+  });
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// BOXES
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function makeBox(b, colX, slotW, idx, type) {
+  const isPerm = type === 'perm';
+  const isCare = type === 'care';
+  const bw = isPerm ? (b.isRevlon ? RW : BW) : (isCare ? CARE_BW : CBW);
+  const bh = isPerm ? (b.isRevlon ? RH : BH) : CBH;
+  const lft = Math.round(colX + idx * slotW + (slotW - bw) / 2);
+  const topY = Math.round(p2y(b.price) - bh / 2);
+
+  const HEADER_H = isPerm ? (b.isRevlon ? 44 : 42) : 40;
+  const PRICE_H  = isPerm ? 34 : 32;
+  const ART_H    = bh - HEADER_H - PRICE_H;
+
+  const box = document.createElement('div');
+  box.className = 'brand-box';
+  box.id = 'bx-' + b.key;
+  box.title = 'Click to edit price';
+
+  let boxCSS = `left:${lft}px;top:${topY}px;width:${bw}px;height:${bh}px;`;
+  if (isPerm) {
+    boxCSS += `box-shadow:${b.sh};z-index:${b.isRevlon ? 12 : 5};`;
+  } else {
+    const style = type === 'care' ? 'dashed' : type === 'touchup' ? 'solid' : 'dotted';
+    const width = type === 'touchup' ? '2.5px' : '2px';
+    boxCSS += `border:${width} ${style} ${b.bc};z-index:6;background:#fff;box-shadow:0 3px 10px rgba(0,0,0,0.12);`;
+  }
+  box.style.cssText = boxCSS;
+
+  // Header
+  const hdrPad = isCare ? '5px 3px 4px' : '5px 6px 4px';
+  const hdr = mk('div',`background:${b.bg};height:${HEADER_H}px;padding:${hdrPad};overflow:hidden;`);
+  const orgSize  = isPerm ? '9.5px'  : '9px';
+  const longName = isCare ? b.name.length > 7 : b.name.length > 11;
+  const nameSize = isPerm
+    ? (b.isRevlon ? '13px' : (longName ? '10.5px' : '12px'))
+    : (isCare
+        ? (longName ? '8.5px' : '10.5px')
+        : (longName ? '9.5px' : '11px'));
+  const nameLH   = longName ? '1.05' : '1.2';
+  hdr.innerHTML = `
+    <div style="font-size:${orgSize};font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.65);">${b.org}</div>
+    <div style="font-size:${nameSize};font-weight:700;color:#fff;line-height:${nameLH};margin-top:2px;">${b.name}</div>
+  `;
+  box.appendChild(hdr);
+
+  // Art
+  const art = mk('div',`background:${b.bg};height:${ART_H}px;position:relative;overflow:hidden;`);
+  if (b.ig) art.appendChild(mk('div',`position:absolute;inset:0;background:${b.ig};`));
+  art.appendChild(mk('div',`position:absolute;bottom:5px;right:6px;width:12px;height:12px;border-radius:50%;background:#060606;border:1.5px solid rgba(255,255,255,0.5);`));
+  if (b.isRevlon && isPerm) {
+    const cs = mk('div',`position:absolute;top:5px;left:0;right:0;text-align:center;font-family:'Cormorant Garamond',serif;font-size:8px;font-weight:500;letter-spacing:0.22em;color:rgba(255,255,255,0.32);text-transform:uppercase;`);
+    cs.textContent = 'ColorSilk';
+    art.appendChild(cs);
+  }
+  box.appendChild(art);
+
+  // Price strip
+  const strip = mk('div',`height:${PRICE_H}px;background:#fff;border-top:1px solid rgba(0,0,0,0.07);display:flex;flex-direction:column;align-items:center;justify-content:center;`);
+  strip.id = 'strip-' + b.key;
+  renderPrice(strip, b, bw, isPerm);
+  box.appendChild(strip);
+
+  box.addEventListener('click', (e) => {
+    e.stopPropagation();
+    editPrice(b, box, strip, bw, bh, isPerm);
+  });
+  document.getElementById('zone').appendChild(box);
+}
+
+function renderPrice(strip, b, bw, isPerm) {
+  const fs = isPerm ? (bw >= RW ? '21px' : '19px') : '17px';
+  if (b.price != null) {
+    strip.innerHTML = `
+      <div style="font-family:'Cormorant Garamond',serif;font-size:${fs};font-weight:500;color:${b.pc};line-height:1;">$${b.price.toFixed(2)}</div>
+    `;
+  } else {
+    strip.innerHTML = `<div style="font-family:'DM Sans',sans-serif;font-size:10px;color:#bbb;">tap to enter</div>`;
+  }
+}
+
+function editPrice(b, boxEl, strip, bw, bh, isPerm) {
+  let committed = false;
+  strip.innerHTML = '';
+  const inp = document.createElement('input');
+  inp.className = 'price-input-inline';
+  inp.type = 'text';
+  inp.value = b.price != null ? b.price.toFixed(2) : '';
+  inp.placeholder = '0.00';
+  inp.style.fontSize = isPerm ? (bw >= RW ? '19px' : '17px') : '15px';
+  strip.appendChild(inp);
+  inp.focus(); inp.select();
+
+  function commit() {
+    if (committed) return; committed = true;
+    const v = parseFloat(inp.value.replace(/[$,\s]/g, ''));
+    if (!isNaN(v) && v > 0) {
+      b.price = v; b.status = 'updated';
+      // If the new price triggers an axis recompute, rebuild the whole chart
+      if (recomputeAxis()) {
+        rebuildAll();
+        return; // rebuildAll handles renderPrice/annotations via fresh build
+      }
+      boxEl.style.top = Math.round(p2y(v) - bh / 2) + 'px';
+    }
+    renderPrice(strip, b, bw, isPerm);
+    renderCareTable();
+    redrawAnnotations();
+    renderStateBadge();
+  }
+  function cancel() { if (committed) return; committed = true; renderPrice(strip, b, bw, isPerm); }
+
+  inp.addEventListener('blur', commit);
+  inp.addEventListener('keydown', e => {
+    if (e.key === 'Enter')  { inp.removeEventListener('blur', commit); commit(); }
+    if (e.key === 'Escape') { inp.removeEventListener('blur', commit); cancel(); }
+  });
+}
+
+function buildBoxes() {
+  PERM.forEach((b, i)    => makeBox(b, 0,       PERM_SLOT,  i, 'perm'));
+  CARE.forEach((b, i)    => makeBox(b, CARE_X,  CARE_SLOT,  i, 'care'));
+  TOUCHUP.forEach((b, i) => makeBox(b, TOUCH_X, TOUCH_SLOT, i, 'touchup'));
+  DEMI.forEach((b, i)    => makeBox(b, DEMI_X,  DEMI_SLOT,  i, 'demi'));
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// ANNOTATIONS
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+let annoLayer = null;
+function redrawAnnotations() {
+  if (annoLayer) annoLayer.remove();
+  annoLayer = mk('div','position:absolute;inset:0;pointer-events:none;z-index:50;overflow:visible;');
+  document.getElementById('zone').appendChild(annoLayer);
+
+  const csBox = PERM.find(b => b.key === 'colorsilk');
+
+  // ColorSilk reference line (constrained to PERM column)
+  if (csBox?.price != null) {
+    const yRef = p2y(csBox.price);
+    annoLayer.appendChild(mk('div',`position:absolute;left:0;width:${PERM_W}px;top:${yRef}px;height:0;border-top:1.5px dashed rgba(200,16,46,0.4);`));
+    const rl = mk('div',`position:absolute;left:${PERM_W - 160}px;top:${yRef - 18}px;font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.05em;color:rgba(200,16,46,0.65);white-space:nowrap;`);
+    rl.textContent = 'ColorSilk box = $' + csBox.price.toFixed(2);
+    annoLayer.appendChild(rl);
+  }
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// UTIL + INIT
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function mk(tag, css) {
+  const el = document.createElement(tag);
+  if (css) el.style.cssText = css.replace(/\n\s+/g, ' ').trim();
+  return el;
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// DYNAMIC AXIS — recomputes MAX_P based on highest price entered
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function recomputeAxis() {
+  const all = [...PERM, ...CARE, ...TOUCHUP, ...DEMI]
+    .filter(p => p.price != null)
+    .map(p => p.price);
+  if (!all.length) return false;
+  const maxPrice = Math.max(...all);
+  // Round up to next $2 with at least $3 of headroom; never below 16
+  const target = Math.max(16, Math.ceil((maxPrice + 3) / 2) * 2);
+  if (target !== MAX_P) {
+    MAX_P = target;
+    PPD = STAGE_H / (MAX_P - MIN_P);
+    return true;
+  }
+  return false;
+}
+
+function rebuildAll() {
+  document.getElementById('axis').innerHTML = '';
+  document.getElementById('zone').innerHTML = '';
+  buildAxis();
+  buildZone();
+  buildBoxes();
+  renderCareTable();
+  redrawAnnotations();
+  renderStateBadge();
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// AFTER COLOR CARE — reference table
+// Replaces per-box price labels (which overlapped the bracket pills)
+// Sits at top of CARE column, neutral styling (works across retailer themes)
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function renderCareTable() {
+  const z = document.getElementById('zone');
+  const old = document.getElementById('careTable');
+  if (old) old.remove();
+
+  // Map care item to its corresponding box for ratio calc (brand-line link)
+  const boxMap = {
+    'cs-care':         'colorsilk',
+    'feria-care':      'feria',
+    'excellence-care': 'excellence',
+    'pref-care':       'pref'
+  };
+
+  const tbl = mk('div',
+    `position:absolute;top:32px;left:${CARE_X + 4}px;width:${CARE_W - 8}px;
+     background:rgba(255,255,255,0.97);
+     border:1px solid rgba(15,15,18,0.2);
+     border-radius:4px;
+     padding:8px 9px 9px;
+     box-shadow:0 2px 6px rgba(0,0,0,0.06);
+     z-index:8;`);
+  tbl.id = 'careTable';
+
+  let html = `<div style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#0F0F12;margin-bottom:6px;padding-bottom:5px;border-bottom:1px solid rgba(15,15,18,0.12);">Basket attach</div>`;
+
+  CARE.forEach(c => {
+    const dotColor = c.bc;  // each brand's own color
+    const box = PERM.find(b => b.key === boxMap[c.key]);
+    const ratio = (box && box.price > 0) ? (c.price / box.price).toFixed(2) : '—';
+    const perOz = (c.oz > 0) ? (c.price / c.oz).toFixed(2) : '—';
+    html += `
+      <div style="display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;font-size:11px;line-height:1.4;padding:3px 0;">
+        <div style="width:5px;height:5px;border-radius:50%;background:${dotColor};flex-shrink:0;"></div>
+        <div style="flex:1;color:#0F0F12;font-weight:500;">${c.name}</div>
+        <div style="color:${dotColor};font-weight:700;font-size:12px;">${ratio}×</div>
+        <div style="color:rgba(15,15,18,0.6);font-size:10px;font-weight:500;width:50px;text-align:right;">$${perOz}/oz</div>
+      </div>
+    `;
+  });
+  tbl.innerHTML = html;
+  z.appendChild(tbl);
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// DEFAULT vs SCENARIO STATE
+// Snapshot the initial state at script load. Compare current vs default to
+// determine if the chart is in DEFAULT mode (Walmart shelf truth) or SCENARIO mode
+// (user-modified). Brand integrity: audience always knows what they're looking at.
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const DEFAULT_STATE = {
+  perm:    PERM.map(p => ({ price: p.price, oz: p.oz })),
+  care:    CARE.map(c => ({ price: c.price, oz: c.oz })),
+  touchup: TOUCHUP.map(t => ({ price: t.price })),
+  demi:    DEMI.map(d => ({ price: d.price })),
+  tiers:   TIERS.map(t => ({ label: t.label, lo: t.lo, hi: t.hi }))
+};
+const PROVENANCE = 'Walmart shelf · 8 May 2026';
+
+// Tolerance comparison for floating-point safety
+function diff(a, b) { return Math.abs((a||0) - (b||0)) > 0.001; }
+
+function countDivergence() {
+  let n = 0;
+  PERM.forEach((p, i) => {
+    if (diff(p.price, DEFAULT_STATE.perm[i].price)) n++;
+    if (diff(p.oz,    DEFAULT_STATE.perm[i].oz))    n++;
+  });
+  CARE.forEach((c, i) => {
+    if (diff(c.price, DEFAULT_STATE.care[i].price)) n++;
+    if (diff(c.oz,    DEFAULT_STATE.care[i].oz))    n++;
+  });
+  TOUCHUP.forEach((t, i) => { if (diff(t.price, DEFAULT_STATE.touchup[i].price)) n++; });
+  DEMI.forEach((d, i)    => { if (diff(d.price, DEFAULT_STATE.demi[i].price))    n++; });
+  if (TIERS.length !== DEFAULT_STATE.tiers.length) {
+    n += Math.abs(TIERS.length - DEFAULT_STATE.tiers.length);
+  } else {
+    TIERS.forEach((t, i) => {
+      const def = DEFAULT_STATE.tiers[i];
+      if ((t.label||'') !== (def.label||'') || diff(t.lo, def.lo) || diff(t.hi, def.hi)) n++;
+    });
+  }
+  return n;
+}
+
+function resetToDefault() {
+  PERM.forEach((p, i)    => { p.price = DEFAULT_STATE.perm[i].price; p.oz = DEFAULT_STATE.perm[i].oz; });
+  CARE.forEach((c, i)    => { c.price = DEFAULT_STATE.care[i].price; c.oz = DEFAULT_STATE.care[i].oz; });
+  TOUCHUP.forEach((t, i) => { t.price = DEFAULT_STATE.touchup[i].price; });
+  DEMI.forEach((d, i)    => { d.price = DEFAULT_STATE.demi[i].price; });
+  // Restore tiers (in-place mutation since let TIERS may be referenced elsewhere)
+  TIERS.length = 0;
+  DEFAULT_STATE.tiers.forEach(t => TIERS.push({
+    label: t.label, lo: t.lo, hi: t.hi,
+    // re-attach styling that wasn't snapshotted
+    bg: 'rgba(220,224,232,0.5)', lc: 'rgba(60,65,75,0.6)'
+  }));
+  // Restore the original tier styling (bg/lc) by index
+  const origStyles = [
+    { bg:'rgba(245,247,250,0.0)' },
+    { bg:'rgba(232,234,238,0.6)', lc:'rgba(60,65,75,0.6)' },
+    { bg:'rgba(222,224,228,0.4)' },
+    { bg:'rgba(212,214,220,0.6)', lc:'rgba(60,65,75,0.6)' },
+    { bg:'rgba(196,200,208,0.6)', lc:'rgba(60,65,75,0.6)' },
+    { bg:'rgba(178,184,194,0.65)', lc:'rgba(60,65,75,0.65)' },
+  ];
+  TIERS.forEach((t, i) => { if (origStyles[i]) Object.assign(t, origStyles[i]); });
+  recomputeAxis();
+  rebuildAll();
+}
+
+function renderStateBadge() {
+  const z = document.getElementById('zone');
+  const old = document.getElementById('stateBadge');
+  if (old) old.remove();
+
+  const n = countDivergence();
+  const isScenario = n > 0;
+  const dotColor = isScenario ? '#2563EB' : '#10B981';
+  const labelHTML = isScenario
+    ? `<strong style="font-weight:700;letter-spacing:0.05em;">Scenario</strong> · ${n} change${n>1?'s':''} from default`
+    : `<strong style="font-weight:700;letter-spacing:0.05em;">Default</strong> · ${PROVENANCE}`;
+
+  const badge = mk('div', `
+    position:absolute;top:8px;right:8px;
+    background:rgba(255,255,255,0.97);
+    border:1px solid ${isScenario ? '#2563EB' : '#10B981'}55;
+    border-radius:14px;
+    padding:5px 9px 5px 9px;
+    display:flex;align-items:center;gap:6px;
+    font-family:'DM Sans',sans-serif;
+    font-size:10.5px;color:#0F0F12;
+    z-index:9;
+    box-shadow:0 2px 6px rgba(0,0,0,0.07);
+    pointer-events:auto;
+  `);
+  badge.id = 'stateBadge';
+  badge.innerHTML = `
+    <div style="width:7px;height:7px;border-radius:50%;background:${dotColor};flex-shrink:0;"></div>
+    <span>${labelHTML}</span>
+    ${isScenario ? `<button id="resetBtn" style="margin-left:4px;padding:2px 9px 3px;background:${dotColor};color:#fff;border:none;border-radius:9px;font-family:'DM Sans',sans-serif;font-size:9.5px;font-weight:600;cursor:pointer;letter-spacing:0.06em;">RESET</button>` : ''}
+  `;
+  z.appendChild(badge);
+
+  if (isScenario) {
+    document.getElementById('resetBtn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      resetToDefault();
+    });
+  }
+}
+
+recomputeAxis();
+buildAxis();
+buildZone();
+buildBoxes();
+renderCareTable();
+redrawAnnotations();
+renderStateBadge();
+
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// TIER EDIT POPOVER
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+let activePopover = null;
+
+function editTier(idx, evt) {
+  if (activePopover) { activePopover.remove(); activePopover = null; }
+  const tier = TIERS[idx];
+
+  const pop = mk('div', '');
+  pop.className = 'tier-popover';
+  pop.innerHTML = `
+    <div class="tier-popover-title">Edit tier</div>
+    <div class="tier-popover-row">
+      <label>Name</label>
+      <input type="text" class="tp-name" value="${tier.label || ''}" placeholder="e.g. PREMIUM">
+    </div>
+    <div class="tier-popover-row">
+      <label>From $</label>
+      <input type="number" step="0.01" class="tp-lo" value="${tier.lo}">
+    </div>
+    <div class="tier-popover-row">
+      <label>To $</label>
+      <input type="number" step="0.01" class="tp-hi" value="${tier.hi}">
+    </div>
+    <div class="tier-popover-buttons">
+      <button class="tp-delete">Delete</button>
+      <button class="tp-save">Save</button>
+    </div>
+  `;
+  pop.addEventListener('click', e => e.stopPropagation());
+
+  // Position popover near the click, but inside the viewport
+  const x = Math.min(evt.clientX, window.innerWidth - 260);
+  const y = Math.min(evt.clientY + 10, window.innerHeight - 240);
+  pop.style.left = x + 'px';
+  pop.style.top = y + 'px';
+  pop.style.position = 'fixed';
+
+  document.body.appendChild(pop);
+  activePopover = pop;
+  pop.querySelector('.tp-name').focus();
+  pop.querySelector('.tp-name').select();
+
+  pop.querySelector('.tp-save').addEventListener('click', () => {
+    const name = pop.querySelector('.tp-name').value.trim().toUpperCase();
+    const lo = parseFloat(pop.querySelector('.tp-lo').value);
+    const hi = parseFloat(pop.querySelector('.tp-hi').value);
+    if (!isNaN(lo) && !isNaN(hi) && hi > lo) {
+      TIERS[idx] = { ...tier, label: name || null, lo, hi };
+      renderTierBands();
+      renderStateBadge();
+    }
+    pop.remove();
+    activePopover = null;
+  });
+  pop.querySelector('.tp-delete').addEventListener('click', () => {
+    TIERS.splice(idx, 1);
+    renderTierBands();
+    renderStateBadge();
+    pop.remove();
+    activePopover = null;
+  });
+}
+
+document.addEventListener('click', () => {
+  if (activePopover) { activePopover.remove(); activePopover = null; }
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && activePopover) {
+    activePopover.remove();
+    activePopover = null;
+  }
+});
+</script>
+</body>
+</html>
