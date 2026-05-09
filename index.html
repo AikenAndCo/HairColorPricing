@@ -202,11 +202,31 @@ body {
 /* ── FOOTER ── */
 .footer {
   background: #1F242E;
-  height: 8px;
+  padding: 9px 24px 10px;
   margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
 }
 .footer-l { display: flex; align-items: center; gap: 10px; }
 .fdot { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.2); }
+
+/* ── PRINT / PDF — flatten shadows that render with artifacts in PDF ── */
+@media print {
+  .brand-box { box-shadow: 0 1px 3px rgba(0,0,0,0.15) !important; }
+  #zone, .zone, [id="zone"] { box-shadow: none !important; }
+  #stateBadge { box-shadow: none !important; }
+  /* PERM Revlon hero — keep a touch of red but flat */
+  #bx-colorsilk { box-shadow: 0 2px 6px rgba(200,16,46,0.25) !important; }
+  /* CARE boxes have dashed borders + color-tinted shadows; flatten */
+  #bx-cs-care, #bx-feria-care, #bx-excellence-care, #bx-pref-care { box-shadow: none !important; }
+}
 
 /* ── TIER EDIT POPOVER ── */
 .tier-band-clickable {
@@ -304,7 +324,7 @@ body {
 <!-- TITLE -->
 <div class="title-bar">
   <h1>Women's Hair Color — Competitive Price Landscape</h1>
-  <div class="title-bar-rt">Click any price or tier to edit · Positions update live</div>
+  <div class="title-bar-rt">v1 · observed 8 May 2026</div>
 </div>
 
 <!-- CONTENT -->
@@ -316,7 +336,10 @@ body {
 </div>
 
 <!-- FOOTER -->
-<div class="footer"></div>
+<div class="footer">
+  <div>Walmart.com observed shelf prices</div>
+  <div>Revlon · Revenue Growth Management</div>
+</div>
 
 </div>
 
@@ -548,16 +571,24 @@ function makeBox(b, colX, slotW, idx, type) {
   // Header
   const hdrPad = isCare ? '5px 3px 4px' : '5px 6px 4px';
   const hdr = mk('div',`background:${b.bg};height:${HEADER_H}px;padding:${hdrPad};overflow:hidden;`);
-  const orgSize  = isPerm ? '9.5px'  : '9px';
-  const longName = isCare ? b.name.length > 7 : b.name.length > 11;
+
+  // Org label — long names like "Schwarzkopf" get smaller font + tighter letter-spacing
+  const longOrg  = b.org.length > 9;
+  const orgSize  = isPerm
+    ? (longOrg ? '7px' : '10px')
+    : (longOrg ? '7px' : '9px');
+  const orgLS    = longOrg ? '0em' : '0.1em';
+
+  // Brand name — bumped sizes; long names (>9 chars) dynamically scaled to fit
+  const longName = isCare ? b.name.length > 7 : b.name.length > 9;
   const nameSize = isPerm
-    ? (b.isRevlon ? '13px' : (longName ? '10.5px' : '12px'))
+    ? (b.isRevlon ? '14.5px' : (longName ? '11px' : '13.5px'))
     : (isCare
-        ? (longName ? '8.5px' : '10.5px')
-        : (longName ? '9.5px' : '11px'));
-  const nameLH   = longName ? '1.05' : '1.2';
+        ? (longName ? '9px' : '11px')
+        : (longName ? '11px' : '12.5px'));
+  const nameLH   = longName ? '1.05' : '1.18';
   hdr.innerHTML = `
-    <div style="font-size:${orgSize};font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.65);">${b.org}</div>
+    <div style="font-size:${orgSize};font-weight:700;letter-spacing:${orgLS};text-transform:uppercase;color:rgba(255,255,255,0.65);">${b.org}</div>
     <div style="font-size:${nameSize};font-weight:700;color:#fff;line-height:${nameLH};margin-top:2px;">${b.name}</div>
   `;
   box.appendChild(hdr);
@@ -587,7 +618,7 @@ function makeBox(b, colX, slotW, idx, type) {
 }
 
 function renderPrice(strip, b, bw, isPerm) {
-  const fs = isPerm ? (bw >= RW ? '21px' : '19px') : '17px';
+  const fs = isPerm ? (bw >= RW ? '22.5px' : '20.5px') : '18.5px';
   if (b.price != null) {
     strip.innerHTML = `
       <div style="font-family:'Cormorant Garamond',serif;font-size:${fs};font-weight:500;color:${b.pc};line-height:1;">$${b.price.toFixed(2)}</div>
@@ -830,7 +861,7 @@ function renderStateBadge() {
     : `<strong style="font-weight:700;letter-spacing:0.05em;">Default</strong> · ${PROVENANCE}`;
 
   const badge = mk('div', `
-    position:absolute;top:8px;right:8px;
+    position:absolute;top:42px;right:8px;
     background:rgba(255,255,255,0.97);
     border:1px solid ${isScenario ? '#2563EB' : '#10B981'}55;
     border-radius:14px;
