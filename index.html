@@ -8,8 +8,8 @@
 <style>
 :root {
   --r-primary: #0F0F12;     /* black header */
-  --r-secondary: #C8102E;   /* red title bar */
-  --r-accent: #C8102E;      /* red accent (kept var name for compatibility with hdr-tag em) */
+  --r-secondary: #2D3340;   /* dark slate title bar */
+  --r-accent: #2D3340;      /* dark slate accent */
   --bg: #F4F6F9;
   --navy: #1A2744;
   --muted: #6B6560;
@@ -222,7 +222,7 @@ body {
   .brand-box { box-shadow: 0 1px 3px rgba(0,0,0,0.15) !important; }
   #zone, .zone, [id="zone"] { box-shadow: none !important; }
   #stateBadge { box-shadow: none !important; }
-  /* PERM Revlon hero — keep a touch of red but flat */
+  /* PERM ColorSilk — flat shadow with subtle red tint */
   #bx-colorsilk { box-shadow: 0 2px 6px rgba(200,16,46,0.25) !important; }
   /* CARE boxes have dashed borders + color-tinted shadows; flatten */
   #bx-cs-care, #bx-feria-care, #bx-excellence-care, #bx-pref-care { box-shadow: none !important; }
@@ -324,7 +324,7 @@ body {
 <!-- TITLE -->
 <div class="title-bar">
   <h1>Women's Hair Color — Competitive Price Landscape</h1>
-  <div class="title-bar-rt">v1 · observed 8 May 2026</div>
+  <div class="title-bar-rt"></div>
 </div>
 
 <!-- CONTENT -->
@@ -337,8 +337,8 @@ body {
 
 <!-- FOOTER -->
 <div class="footer">
-  <div>Walmart.com observed shelf prices</div>
-  <div>Aiken &amp; Co. · Revenue Growth Management</div>
+  <div>Source: Walmart.com · 8 May 2026</div>
+  <div>Jeff Aiken · Revenue Growth Management</div>
 </div>
 
 </div>
@@ -348,10 +348,10 @@ body {
 // DATA
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 const PERM = [
-  { key:'colorsilk', name:'ColorSilk',    org:'Revlon',       price:4.97, oz:4.0, isRevlon:true,
+  { key:'colorsilk', name:'ColorSilk',    org:'Revlon',       price:4.97, oz:4.0,
     bg:'linear-gradient(158deg,#C8102E 0%,#7D0A1B 100%)',
     ig:'radial-gradient(ellipse 65% 72% at 50% 32%,rgba(255,210,210,0.38) 0%,transparent 66%)',
-    pc:'#C8102E', sh:'0 10px 32px rgba(200,16,46,0.46),0 3px 10px rgba(0,0,0,0.2)' },
+    pc:'#C8102E', sh:'0 4px 14px rgba(0,0,0,0.16),0 2px 6px rgba(0,0,0,0.08)' },
   { key:'niceeasy',  name:"Nice 'n Easy", org:'Clairol',      price:7.98,
     bg:'linear-gradient(158deg,#1A4F8E 0%,#0C2D56 100%)',
     ig:'radial-gradient(ellipse 65% 72% at 50% 32%,rgba(155,215,255,0.24) 0%,transparent 66%)',
@@ -414,14 +414,14 @@ const DEMI = [
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // SCALE
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-const MIN_P = 0, STAGE_H = 680;
-let MAX_P = 16;                              // dynamic — recomputed when prices change
+const MIN_P = 3, STAGE_H = 680;
+let MAX_P = 14;                              // dynamic — recomputed when prices change
 let PPD = STAGE_H / (MAX_P - MIN_P);         // dynamic
 function p2y(p) { return (MAX_P - p) * PPD; }
 
 // Box dims — sized to fit the wider $0-$16 range without overpowering the y-axis
 const BW = 68,  BH = 108;   // standard perm
-const RW = 76,  RH = 120;   // Revlon hero
+const RW = 76,  RH = 120;   // legacy hero dims (unused in v1.x)
 const CBW = 66, CBH = 102;  // touch/demi
 const CARE_BW = 56;          // care boxes — narrower since 4 fit in CARE column
 
@@ -471,7 +471,7 @@ function buildAxis() {
     if (isW) {
       const lbl = mk('span',`position:absolute;right:18px;top:50%;transform:translateY(-50%);
         font-family:'Cormorant Garamond',serif;
-        font-size:${isE?'19px':'15px'};font-weight:${isE?'500':'300'};
+        font-size:${isE?'21px':'17px'};font-weight:${isE?'500':'300'};
         color:#1A2744;opacity:${isE?0.9:0.5};white-space:nowrap;`);
       lbl.textContent = '$' + p;
       row.appendChild(lbl);
@@ -531,7 +531,7 @@ function renderTierBands() {
     }
     layer.appendChild(band);
     if (t.label) {
-      const lb = mk('div',`position:absolute;left:10px;top:${tp + 6}px;font-size:11px;font-weight:700;letter-spacing:0.18em;color:${t.lc};pointer-events:none;`);
+      const lb = mk('div',`position:absolute;left:6px;top:${tp + 5}px;font-size:11px;font-weight:700;letter-spacing:0.18em;color:${t.lc};pointer-events:none;background:rgba(248,245,242,0.95);padding:2px 7px;border-radius:3px;z-index:7;`);
       lb.textContent = t.label;
       layer.appendChild(lb);
     }
@@ -681,17 +681,7 @@ function redrawAnnotations() {
   if (annoLayer) annoLayer.remove();
   annoLayer = mk('div','position:absolute;inset:0;pointer-events:none;z-index:50;overflow:visible;');
   document.getElementById('zone').appendChild(annoLayer);
-
-  const csBox = PERM.find(b => b.key === 'colorsilk');
-
-  // ColorSilk reference line (constrained to PERM column)
-  if (csBox?.price != null) {
-    const yRef = p2y(csBox.price);
-    annoLayer.appendChild(mk('div',`position:absolute;left:0;width:${PERM_W}px;top:${yRef}px;height:0;border-top:1.5px dashed rgba(200,16,46,0.4);`));
-    const rl = mk('div',`position:absolute;left:${PERM_W - 160}px;top:${yRef - 18}px;font-family:'DM Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.05em;color:rgba(200,16,46,0.65);white-space:nowrap;`);
-    rl.textContent = 'ColorSilk box = $' + csBox.price.toFixed(2);
-    annoLayer.appendChild(rl);
-  }
+  // Reference line removed in v1.0 — chart should not anchor on any single brand
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -712,8 +702,8 @@ function recomputeAxis() {
     .map(p => p.price);
   if (!all.length) return false;
   const maxPrice = Math.max(...all);
-  // Round up to next $2 with at least $3 of headroom; never below 16
-  const target = Math.max(16, Math.ceil((maxPrice + 3) / 2) * 2);
+  // Round up to next $2 with at least $1 of headroom; never below 14
+  const target = Math.max(14, Math.ceil((maxPrice + 1) / 2) * 2);
   if (target !== MAX_P) {
     MAX_P = target;
     PPD = STAGE_H / (MAX_P - MIN_P);
@@ -761,7 +751,7 @@ function renderCareTable() {
      z-index:8;`);
   tbl.id = 'careTable';
 
-  let html = `<div style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#0F0F12;margin-bottom:6px;padding-bottom:5px;border-bottom:1px solid rgba(15,15,18,0.12);">Basket attach</div>`;
+  let html = `<div style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#0F0F12;margin-bottom:6px;padding-bottom:5px;border-bottom:1px solid rgba(15,15,18,0.12);">Care vs box price</div>`;
 
   CARE.forEach(c => {
     const dotColor = c.bc;  // each brand's own color
@@ -770,7 +760,7 @@ function renderCareTable() {
     const perOz = (c.oz > 0) ? (c.price / c.oz).toFixed(2) : '—';
     html += `
       <div style="display:flex;align-items:center;gap:5px;font-family:'DM Sans',sans-serif;font-size:11px;line-height:1.4;padding:3px 0;">
-        <div style="width:5px;height:5px;border-radius:50%;background:${dotColor};flex-shrink:0;"></div>
+        <div style="width:6px;height:6px;border-radius:50%;background:${dotColor};flex-shrink:0;"></div>
         <div style="flex:1;color:#0F0F12;font-weight:500;">${c.name}</div>
         <div style="color:${dotColor};font-weight:700;font-size:12px;">${ratio}×</div>
         <div style="color:rgba(15,15,18,0.6);font-size:10px;font-weight:500;width:50px;text-align:right;">$${perOz}/oz</div>
@@ -794,7 +784,7 @@ const DEFAULT_STATE = {
   demi:    DEMI.map(d => ({ price: d.price })),
   tiers:   TIERS.map(t => ({ label: t.label, lo: t.lo, hi: t.hi }))
 };
-const PROVENANCE = 'Walmart shelf · 8 May 2026';
+const PROVENANCE = 'Walmart shelf';
 
 // Tolerance comparison for floating-point safety
 function diff(a, b) { return Math.abs((a||0) - (b||0)) > 0.001; }
